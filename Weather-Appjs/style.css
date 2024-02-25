@@ -95,6 +95,9 @@ weather h2{
     margin-top: -6px;
 }
 
+.weather{
+    display: none;
+}
 
 
 

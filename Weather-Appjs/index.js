@@ -17,6 +17,7 @@ async function checkWeather() {
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".humidity").innerHTML = `${data.main.humidity}%`;
     document.querySelector(".wind").innerHTML = `${data.wind.speed} km/h`;
+    document.querySelector(".weather").style.display="block";
 
   } catch (error) {
     console.error("Error fetching weather data:", error);
