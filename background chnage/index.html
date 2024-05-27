@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            height: 100vh; /* Full viewport height */
+            text-align: center; /* Center text inside items */
+        }
+        .btn {
+            display: flex;
+            padding: 20px; /* Increased padding for larger boxes */
+            min-width: 100px; /* Increased width */
+            min-height: 50px; /* Increased height */
+            justify-content: center;
+            align-items: center;
+            font-size: 16px; /* Increased font size */
+            margin: 5px; /* Added margin for spacing between buttons */
+            color: white; /* Text color */
+            border-radius: 5px; /* Rounded corners for better aesthetics */
+            cursor: pointer; /* Pointer cursor for better UX */
+            border: 2px solid white; /* Border for buttons */
+        }
+    </style>
+</head>
+<body style="background-color: #2f2f2f;">
+
+    <div class="container">
+        <h1>Change the background-color</h1>
+        <div style="display: flex; gap: 10px;"> <!-- Flex container for buttons with gap between them -->
+            <span class="btn" id="purple" style="background-color: blue;">blue</span>
+            <span class="btn" id="red" style="background-color: red;">red</span>
+            <span class="btn" id="green" style="background-color: green;">green</span>
+            <span class="btn" id="yellow" style="background-color: yellow; color: black;">yellow</span>
+        </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
