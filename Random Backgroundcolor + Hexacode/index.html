@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  
+    <pre id="color-code" class="mt-4 p-4 bg-white shadow-md rounded-lg"> Color Codes</pre>
+  
+  
+    <button
+        id="start"
+        class="px-6 py-3 m-2 bg-green-600 text-white font-bold rounded-2xl shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+    >
+        Start
+    </button>
+    <button
+        id="stop"
+        class="px-6 py-3 mt-2 bg-red-600 text-white font-bold rounded-2xl shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+    >
+        Stop
+    </button>
+
+    <script>
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const colorCodeElement = document.getElementById("color-code");
+        let intervalId;
+
+        // Function to generate a random hex color code
+        function getRandomHexColor() {
+            let color = '#';
+            const hexChars = '0123456789ABCDEF';
+            for (let i = 0; i < 6; i++) {
+                color += hexChars[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        startButton.addEventListener('click', () => {
+            if (intervalId) return; // Prevent multiple intervals
+            intervalId = setInterval(() => {
+                const randomColor = getRandomHexColor();
+                document.body.style.backgroundColor = randomColor;
+                colorCodeElement.textContent = `Background Color: ${randomColor}`;
+            }, 2000);
+        });
+
+        stopButton.addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+    </script>
+</body>
+</html>
